@@ -12,7 +12,9 @@ module Doubledip.State {
       this.load.image('person0', 'assets/images/person0.png');
       this.load.image('table', 'assets/images/table.png');
       this.load.image('bowl', 'assets/images/bowl.png');
-      this.load.spritesheet('person', 'assets/sprites/person/person-sprite.png', 64, 128, 2);
+      this.load.spritesheet('person0', 'assets/sprites/person/person0.png', 64, 128, 6);
+      this.load.spritesheet('person1', 'assets/sprites/person/person1.png', 64, 128, 6);
+      this.load.spritesheet('person2', 'assets/sprites/person/person2.png', 64, 128, 6);
       // Load remaining assets here
     }
 

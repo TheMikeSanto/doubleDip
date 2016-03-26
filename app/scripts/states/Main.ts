@@ -10,9 +10,9 @@ module Doubledip.State {
 			this.score = 0;
       this.stage.backgroundColor = 0xffff99;
       var bowl = new Bowl(this, 280, 940);
-      this.people[0] = new Person(this.game, 'person', 10, personY);
-      this.people[1] = new Person(this.game, 'person', 266, personY);
-      this.people[2] = new Person(this.game, 'person', 522, personY);
+      this.people[0] = new Person(this.game, 'person0', 10, personY);
+      this.people[1] = new Person(this.game, 'person1', 266, personY);
+      this.people[2] = new Person(this.game, 'person2', 522, personY);
       var table = this.game.add.sprite(0, 854, 'table');
       
       this.game.add.existing(bowl);
@@ -20,6 +20,10 @@ module Doubledip.State {
       this.game.add.existing(this.people[1]);
       this.game.add.existing(this.people[2]);
 
+      this.people.forEach(function(person: Person) {
+        person.init();
+      });
+      
       this.game.time.events.loop(Phaser.Timer.SECOND, this.determineFaces, this);
 
       var scoreStyle = {

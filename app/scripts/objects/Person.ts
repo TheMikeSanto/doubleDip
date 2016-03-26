@@ -9,15 +9,19 @@ module Doubledip {
 			this.scale.setTo(3, 3);
 			this.facing = true;
 			this.game = game;
+			this.animations.add('turnToFront', [1, 2, 3, 4, 5, 6]);
+			this.animations.add('turnToBack', [6, 5, 4, 3, 2, 1]);
 		}
 
 		toggleFace() {
-			this.facing = !this.facing;
 			if (this.facing) {
-				this.frame = 0;
+				// this.frame = 0;
+				this.animations.play('turnToBack', 6, false);
 			} else {
-				this.frame = 1;
+				// this.frame = 1;
+				this.animations.play('turnToFront', 6, false);
 			}
+			this.facing = !this.facing;
 		}
 
 		determineFace() {
@@ -25,6 +29,11 @@ module Doubledip {
 			if (chance > 90) {
 				this.toggleFace();
 			}
+		}
+
+		init() {
+			console.log('init');
+			this.animations.play('turnToFront', 6, false);
 		}
 	}
 }

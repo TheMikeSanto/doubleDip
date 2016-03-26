@@ -8,7 +8,6 @@ module Doubledip {
 			this.scale.setTo(3, 3);
 			this.state = state;
 			this.events.onInputDown.add(this.onClick, this);
-			console.log('dip1');
 		}
 
 		onClick (sprite, pointer) {
