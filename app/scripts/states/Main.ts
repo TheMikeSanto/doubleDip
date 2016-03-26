@@ -2,12 +2,14 @@ module Doubledip.State {
   export class Main extends Phaser.State {
     create() {
       this.stage.backgroundColor = 0xffff99;
-      var person0 = this.game.add.sprite(0, 500, 'person0');
-      var person1 = this.game.add.sprite(256, 500, 'person0');
-      var person2 = this.game.add.sprite(512, 500, 'person0');
-      person0.scale.setTo(4, 4);
-      person1.scale.setTo(4, 4);
-      person2.scale.setTo(4, 4);
+      var table = this.game.add.sprite(0, 854, 'table');
+      var personY = 472;
+      var person0 = new Person(this.game, 'person0', 10, personY);
+      var person1 = new Person(this.game, 'person0', 266, personY);
+      var person2 = new Person(this.game, 'person0', 522, personY);
+      this.game.add.existing(person0);
+      this.game.add.existing(person1);
+      this.game.add.existing(person2);
     }
   }
 }
