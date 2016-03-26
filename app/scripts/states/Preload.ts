@@ -11,6 +11,7 @@ module Doubledip.State {
       this.load.image('person-turned', 'assets/images/person-turned.png');
       this.load.image('person0', 'assets/images/person0.png');
       this.load.image('table', 'assets/images/table.png');
+      this.load.image('bowl', 'assets/images/bowl.png');
       // Load remaining assets here
     }
 
