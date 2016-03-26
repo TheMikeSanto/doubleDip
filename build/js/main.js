@@ -65,7 +65,7 @@ var Doubledip;
             Preload.prototype.preload = function () {
                 this.preloadBar = this.add.sprite(0, 148, 'preload-bar');
                 this.load.setPreloadSprite(this.preloadBar);
-                this.load.image('menu-background', 'assets/images/menu-background.png');
+                this.load.image('menu-background', 'assets/images/logo.png');
                 this.load.image('no-double-dipping', 'assets/images/no_double_dipping.jpeg');
                 this.load.image('person-turned', 'assets/images/person-turned.png');
                 this.load.image('person0', 'assets/images/person0.png');
@@ -91,7 +91,7 @@ var Doubledip;
             }
             Menu.prototype.create = function () {
                 var _this = this;
-                this.background = this.add.sprite(80, 0, 'no-double-dipping');
+                this.background = this.add.sprite(0, 120, 'menu-background');
                 this.input.onDown.addOnce(function () {
                     _this.game.state.start('main');
                 });
@@ -133,6 +133,7 @@ var Doubledip;
         function Person(game, spriteName, x, y) {
             _super.call(this, game, x, y, spriteName, 0);
             this.scale.setTo(3, 3);
+            this.face = true;
             this.game = game;
         }
         return Person;

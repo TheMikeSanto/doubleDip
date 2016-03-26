@@ -3,7 +3,7 @@ module Doubledip.State {
     background: Phaser.Sprite;
 
     create() {
-      this.background = this.add.sprite(80, 0, 'no-double-dipping');
+      this.background = this.add.sprite(0, 120, 'menu-background');
       this.input.onDown.addOnce(() => {
         this.game.state.start('main');
       });
