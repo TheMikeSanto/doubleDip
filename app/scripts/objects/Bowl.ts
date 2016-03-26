@@ -8,10 +8,15 @@ module Doubledip {
 			this.scale.setTo(3, 3);
 			this.state = state;
 			this.events.onInputDown.add(this.onClick, this);
+			this.events.onInputUp.add(this.onUp, this);
 		}
 
 		onClick (sprite, pointer) {
 			var caught = false;
+			this.state.hand.visible = true;
+			// this.state.game.add.tween(this.state.hand).to({
+			// 	angle: -45
+			// }, 2000, Phaser.Easing.Linear.None, true);
 			this.state.people.forEach(function(person: Person) {
 				if (person.facing) {
 					caught = true;
@@ -24,6 +29,10 @@ module Doubledip {
 			} else {
 				this.state.updateScore();
 			}
+		}
+
+		onUp (sprite, pointer) {
+			this.state.hand.visible = false;
 		}
 	}
 }

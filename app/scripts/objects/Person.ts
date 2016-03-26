@@ -32,7 +32,6 @@ module Doubledip {
 		}
 
 		init() {
-			console.log('init');
 			this.animations.play('turnToFront', 6, false);
 		}
 	}
