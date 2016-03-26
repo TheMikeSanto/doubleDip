@@ -7,7 +7,6 @@ module Doubledip.State {
     }
 
     create() {
-      this.game.stage.backgroundColor = 0xFFFFFF;
       this.game.scale.fullScreenTarget = this.parentElement;
       this.game.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
       this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
@@ -17,7 +16,7 @@ module Doubledip.State {
       this.game.input.maxPointers = 1;
       this.game.scale.setResizeCallback(function() {
         Utils.resize(this.parentElement, this);
-      }, this);
+      }, this)
       this.game.stage.backgroundColor = 0xffff99;
             // Assign global settings here
       

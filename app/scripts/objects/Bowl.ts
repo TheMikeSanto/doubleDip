@@ -14,6 +14,7 @@ module Doubledip {
 		onClick (sprite, pointer) {
 			var caught = false;
 			this.state.hand.visible = true;
+			this.state.mouthSound.play();
 			// this.state.game.add.tween(this.state.hand).to({
 			// 	angle: -45
 			// }, 2000, Phaser.Easing.Linear.None, true);

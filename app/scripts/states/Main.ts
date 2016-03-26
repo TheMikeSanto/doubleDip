@@ -4,6 +4,8 @@ module Doubledip.State {
 		score: number;
 		scoreText: Phaser.Text;
     hand: Phaser.Sprite;
+    mouthSound: Phaser.Sound;
+    scream: Phaser.Sound;
 
     create() {
       var personY = 472;
@@ -28,6 +30,8 @@ module Doubledip.State {
         person.init();
       });
 
+      this.mouthSound = this.game.add.audio('mouth');
+      this.scream = this.game.add.audio('scream1');
       this.game.time.events.loop(Phaser.Timer.SECOND, this.determineFaces, this);
 
       var scoreStyle = {
@@ -54,6 +58,7 @@ module Doubledip.State {
     }
 
     failure() {
+      this.scream.play();
       this.game.time.events.add(Phaser.Timer.SECOND * 3, function() {
         this.game.state.start('death');
       }, this);
