@@ -9,26 +9,22 @@ module Doubledip {
 			this.state = state;
 			this.events.onInputDown.add(this.onClick, this);
 			this.events.onInputUp.add(this.onUp, this);
+			this.events.onAnimationComplete
 		}
 
 		onClick (sprite, pointer) {
 			var caught = false;
 			this.state.hand.visible = true;
 			this.state.mouthSound.play();
-			// this.state.game.add.tween(this.state.hand).to({
-			// 	angle: -45
-			// }, 2000, Phaser.Easing.Linear.None, true);
 			this.state.people.forEach(function(person: Person) {
 				if (person.facing) {
 					caught = true;
-					person.animations.play('exclaim', 6, false);
-					this.state.failure();
+					person.animations.play('exclaim', 6, false)
 				}
 			}, this);
 
 			if (caught) {
-				// game over
-				console.log('caught!');
+				this.state.failure();
 			} else {
 				this.state.updateScore();
 			}
