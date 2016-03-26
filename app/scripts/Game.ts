@@ -1,14 +1,16 @@
 /// <reference path="../vendor/phaser-official/typescript/phaser.d.ts"/>
 
-/// <reference path='State/Boot.ts'/>
-/// <reference path='State/Preload.ts'/>
-/// <reference path='State/Menu.ts'/>
-/// <reference path='State/Main.ts'/>
+/// <reference path='Utils.ts'/>
+/// <reference path='states/Boot.ts'/>
+/// <reference path='states/Preload.ts'/>
+/// <reference path='states/Menu.ts'/>
+/// <reference path='states/Main.ts'/>
+/// <reference path='objects/Person.ts'/>
 
 module Doubledip {
   export class Game extends Phaser.Game {
     constructor() {
-      super(640, 960, Phaser.AUTO, 'game-div');
+      super(720, 1280, Phaser.CANVAS, 'game-div');
 
       this.state.add('boot', State.Boot);
       this.state.add('preload', State.Preload);
