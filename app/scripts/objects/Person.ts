@@ -28,12 +28,15 @@ module Doubledip {
 			} else {
 				this.blah.play();
 				this.animations.play('turnToFront', 6, false);
+				this.game.time.events.add(Phaser.Timer.SECOND * 3, function() {
+					this.toggleFace();
+				}, this);
 			}
 			this.facing = !this.facing;
 		}
 
 		determineFace() {
-			var chance = Utils.randomInt(1, 100);
+			var chance = Utils.randomInt(1, 100);			
 			if (chance > 90) {
 				this.toggleFace();
 			}
