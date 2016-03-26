@@ -1,17 +1,29 @@
 module Doubledip.State {
   export class Main extends Phaser.State {
+		people: Person[];
+
     create() {
-      this.stage.backgroundColor = 0xffff99;
-      var table = this.game.add.sprite(0, 854, 'table');
-      var bowl = this.game.add.sprite(300, 920, 'bowl');
-      bowl.scale.setTo(3, 3);
       var personY = 472;
-      var person0 = new Person(this.game, 'person0', 10, personY);
-      var person1 = new Person(this.game, 'person0', 266, personY);
-      var person2 = new Person(this.game, 'person0', 522, personY);
-      this.game.add.existing(person0);
-      this.game.add.existing(person1);
-      this.game.add.existing(person2);
+			this.people = [];
+      this.stage.backgroundColor = 0xffff99;
+      var bowl = new Bowl(this.game, 300, 920);
+      this.people[0] = new Person(this.game, 'person', 10, personY);
+      this.people[1] = new Person(this.game, 'person', 266, personY);
+      this.people[2] = new Person(this.game, 'person', 522, personY);
+      var table = this.game.add.sprite(0, 854, 'table');
+      
+      this.game.add.existing(bowl);
+      this.game.add.existing(this.people[0]);
+      this.game.add.existing(this.people[1]);
+      this.game.add.existing(this.people[2]);
+
+      this.game.time.events.loop(Phaser.Timer.SECOND, this.determineFaces, this);
+    }
+
+    determineFaces () {
+			this.people.forEach(function(person: Person) {
+				person.determineFace();
+			});
     }
   }
 }

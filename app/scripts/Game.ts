@@ -5,6 +5,7 @@
 /// <reference path='states/Preload.ts'/>
 /// <reference path='states/Menu.ts'/>
 /// <reference path='states/Main.ts'/>
+/// <reference path='objects/Bowl.ts'/>
 /// <reference path='objects/Person.ts'/>
 
 module Doubledip {

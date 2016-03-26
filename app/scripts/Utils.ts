@@ -6,5 +6,8 @@ module Doubledip {
 			element.style.minHeight = window.innerHeight.toString() + 'px';
 			_this.game.scale.setUserScale(scale, scale, 0, 0);
 		}
+		static randomInt(min: number, max: number) : number {
+			return Math.floor(Math.random() * (max - min)) + min + 1;
+		}
 	}
 }
