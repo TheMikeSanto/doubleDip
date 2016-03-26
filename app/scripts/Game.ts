@@ -5,6 +5,7 @@
 /// <reference path='states/Preload.ts'/>
 /// <reference path='states/Menu.ts'/>
 /// <reference path='states/Main.ts'/>
+/// <reference path='states/Death.ts'/>
 /// <reference path='objects/Bowl.ts'/>
 /// <reference path='objects/Person.ts'/>
 
@@ -17,7 +18,7 @@ module Doubledip {
       this.state.add('preload', State.Preload);
       this.state.add('menu', State.Menu);
       this.state.add('main', State.Main);
-
+      this.state.add('death', State.Death);
       this.state.start('boot');
     }
   }

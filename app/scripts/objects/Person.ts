@@ -9,8 +9,9 @@ module Doubledip {
 			this.scale.setTo(3, 3);
 			this.facing = true;
 			this.game = game;
-			this.animations.add('turnToFront', [1, 2, 3, 4, 5, 6]);
-			this.animations.add('turnToBack', [6, 5, 4, 3, 2, 1]);
+			this.animations.add('turnToFront', [1, 2, 3, 4, 5]);
+			this.animations.add('turnToBack', [5, 4, 3, 2, 1]);
+			this.animations.add('exclaim', [6, 7, 8, 9]);
 		}
 
 		toggleFace() {

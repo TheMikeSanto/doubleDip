@@ -52,5 +52,11 @@ module Doubledip.State {
       var scoreString = this.score.toString() + ' DIPS';
       this.scoreText.setText(scoreString);
     }
+
+    failure() {
+      this.game.time.events.add(Phaser.Timer.SECOND * 3, function() {
+        this.game.state.start('death');
+      }, this);
+    }
   }
 }

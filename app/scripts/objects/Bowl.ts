@@ -20,8 +20,10 @@ module Doubledip {
 			this.state.people.forEach(function(person: Person) {
 				if (person.facing) {
 					caught = true;
+					person.animations.play('exclaim', 6, false);
+					this.state.failure();
 				}
-			});
+			}, this);
 
 			if (caught) {
 				// game over
@@ -33,6 +35,10 @@ module Doubledip {
 
 		onUp (sprite, pointer) {
 			this.state.hand.visible = false;
+		}
+
+		determineCaught (person: Person) {
+
 		}
 	}
 }
