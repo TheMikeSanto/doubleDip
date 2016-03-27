@@ -16,6 +16,9 @@ module Doubledip {
 			this.animations.add('exclaim', [6, 7, 8, 9]);
 			frontAnim.onComplete.add(function() {
 				this.facing = true;
+				this.game.time.events.add(Phaser.Timer.SECOND * 2, function() {
+					this.toggleFace();
+				}, this);
 			}, this);
 			backAnim.onComplete.add(function() {
 				this.facing = false;
@@ -27,10 +30,7 @@ module Doubledip {
 				this.animations.play('turnToBack', 6, false);
 			} else {
 				this.blah.play();
-				this.animations.play('turnToFront', 6, false);
-				this.game.time.events.add(Phaser.Timer.SECOND * 3, function() {
-					this.toggleFace();
-				}, this);
+				this.animations.play('turnToFront', 2, false);
 			}
 			this.facing = !this.facing;
 		}
